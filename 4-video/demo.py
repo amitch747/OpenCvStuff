@@ -20,5 +20,17 @@ def videoFromWebcam():
     cap.release()
     cv.destroyAllWindows()
     
+def videoFromFile():
+    root = os.getcwd()
+    vidPath = os.path.join(root, 'demoFiles\leg.mp4')
+    cap = cv.VideoCapture(vidPath)
+    
+    while cap.isOpened():
+        ret, frame = cap.read()
+        cv.imshow('video', frame)
+        delay = int(1000/60)
+        if cv.waitKey(delay) == ord('q'):
+            break
+    
 if __name__ == '__main__':
     videoFromWebcam()

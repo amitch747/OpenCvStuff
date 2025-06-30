@@ -12,11 +12,10 @@ def houghLineTransform():
     cannyEdge = cv.Canny(imgBlur, 30,60)
     
     plt.figure(figsize=(16, 4))
-    plt.subplot(141)
-    plt.imshow(img)
-    plt.subplot(142)
+
+    plt.subplot(131)
     plt.imshow(imgBlur)
-    plt.subplot(143)
+    plt.subplot(132)
     plt.imshow(cannyEdge)
 
     distResol = 1
@@ -40,7 +39,7 @@ def houghLineTransform():
         cv.line(img, (p1[0][0], p1[1][0]), (p2[0][0],p2[1][0]), (255,255,255), 10)
         
     
-    plt.subplot(144)
+    plt.subplot(133)
     plt.imshow(img)
     plt.show()
 
